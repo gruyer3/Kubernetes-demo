@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: countdown-test
+spec:
+  template:
+    metadata:
+      name: countdown-test
+    spec:
+      containers:
+      - name: container-countdown-test
+        image: fedora:latest
+        command: ["sleep", "5"]
+      restartPolicy: Never
